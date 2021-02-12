@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>slack api リンク生成</title>
+<style>
+</style>
+<script>
+function init() {
+  tokenDom = document.getElementById('token');
+  chDom = document.getElementById('ch');
+  txtDom = document.getElementById('txt');
+  urlDom = document.getElementById('urlView');
+}
+let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
+urlDom.innerHTML = url;
+</script>
+</head>
+<body>
+  ここにBot User OAuth Access Tokenを入力してください...<br>
+  <input type="text" id="token">
+  <br>
+  (参考)<a href="https://api.slack.com">SLACK API</a>
+  <br>
+  ここにURLエンコードしたChannel名を入力してください...<br>
+  <input type="text" id="ch">
+  <br>
+  (参考)<a href="https://tech-unlimited.com/urlencode.html">URLエンコーダ</a>
+  <br>
+  ここに送信したいテキストをエンコードして入力してください...<br>
+  <input type="text" id="txt">
+  <br>
+  <br>
+  <br>
+  完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。<br>
+  <input type="button" id="start" value="START">
+  <br>
+  <div id="urlView">
+  </div>
+</body>
+</html>
