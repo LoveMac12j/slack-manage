@@ -6,11 +6,18 @@
 <style>
 </style>
 <script>
+window.addEventListener("load", init)
 function init() {
   tokenDom = document.getElementById('token');
   chDom = document.getElementById('ch');
   txtDom = document.getElementById('txt');
   urlDom = document.getElementById('urlView');
+  btnDom = document.getElementById('start');
+  btnDom.addEventListener("click", start);
+}
+function start() {
+  let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
+  urlDom.innerHTML = url;
 }
 let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
 urlDom.innerHTML = url;
