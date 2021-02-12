@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>slack api リンク生成</title>
 <style>
+body{
+  max-width: 90%;
+}
 </style>
 <script>
 window.addEventListener("load", init)
@@ -17,10 +20,8 @@ function init() {
 }
 function start() {
   let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
-  urlDom.innerHTML = url;
+  urlDom.value = url;
 }
-let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
-urlDom.innerHTML = url;
 </script>
 </head>
 <body>
@@ -42,7 +43,6 @@ urlDom.innerHTML = url;
   完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。<br>
   <input type="button" id="start" value="START">
   <br>
-  <div id="urlView">
-  </div>
+  <input type="text" id="urlView">
 </body>
 </html>
