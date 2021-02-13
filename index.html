@@ -20,7 +20,7 @@ function init() {
 }
 function start() {
   let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
-  urlDom.value = url;
+  urlDom.value = encodeURI(url);
 }
 </script>
 </head>
@@ -30,12 +30,12 @@ function start() {
   <br>
   (参考)<a href="https://api.slack.com">SLACK API</a>
   <br>
-  ここにURLエンコードしたChannel名を入力してください...<br>
+  ここにChannel名を入力してください...<br>
   <input type="text" id="ch">
   <br>
   (参考)<a href="https://tech-unlimited.com/urlencode.html">URLエンコーダ</a>
   <br>
-  ここに送信したいテキストをエンコードして入力してください...<br>
+  ここに送信したいテキストを入力してください...<br>
   <input type="text" id="txt">
   <br>
   <br>
