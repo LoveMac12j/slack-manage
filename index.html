@@ -17,10 +17,13 @@ function init() {
   urlDom = document.getElementById('urlView');
   btnDom = document.getElementById('start');
   btnDom.addEventListener("click", start);
+  linkDom = document.getElementById('link');
 }
 function start() {
   let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
   urlDom.value = encodeURI(url);
+  let link = "<a href='" + url + "'>Or click the link to run it quickly.</a>"
+  linkDom.innerHTML = link;
 }
 </script>
 </head>
@@ -40,9 +43,11 @@ function start() {
   <br>
   <br>
   <br>
-  完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。<br>
+  完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。'や?などの記号は全角にすることで正しく利用できる場合がございます。<br>
   <input type="button" id="start" value="START">
   <br>
   <input type="text" id="urlView">
+  <div id="link">
+  </div>
 </body>
 </html>
