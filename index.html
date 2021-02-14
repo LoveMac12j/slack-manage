@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <title>slack api リンク生成</title>
 <style>
-body{
-  max-width: 90%;
-}
 </style>
 <script>
 window.addEventListener("load", init)
@@ -43,11 +40,25 @@ function start() {
   <br>
   <br>
   <br>
-  完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。'や?などの記号は全角にすることで正しく利用できる場合がございます。<br>
+  完了したら以下のボタンを押し、表示されたURLをブラウザのURL窓にコピーアンドペーストしてください。<br>
   <input type="button" id="start" value="START">
   <br>
   <input type="text" id="urlView">
   <div id="link">
   </div>
+  <br>
+  <br>
+  <br>
+  --注意事項--<br>
+  1. 改行したい際はこちらをコピーアンドペーストしてください。<br>
+  %0D%0A<br>
+  <br>
+  2. 'や?などの記号は全角にすることで正しく利用できる場合がございます。<br>
+  <br>
+  3. 続けてメッセージを送信する場合はCMD+クリックまたは新規タブで開くを選択して開いてください。<br>
+  タブを操作することで1回目の続きから操作できます。<br>
+  <br>
+  4. リンクを開いてok:trueが表示されたら次の操作に移る前に必ずCMD+Wまたはタブのxボタンでタブを閉じてください。<br>
+  次回ブラウザを開いた際に再読み込みされ、意思に沿わないメッセージが複数回送信されてしまう恐れがあります。
 </body>
 </html>
