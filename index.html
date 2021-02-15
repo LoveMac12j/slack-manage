@@ -11,13 +11,20 @@ function init() {
   tokenDom = document.getElementById('token');
   chDom = document.getElementById('ch');
   txtDom = document.getElementById('txt');
+  tsDom = document.getElementById('ts');
+  //ここから結果表示関連
   urlDom = document.getElementById('urlView');
   btnDom = document.getElementById('start');
   btnDom.addEventListener("click", start);
   linkDom = document.getElementById('link');
 }
 function start() {
-  let url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
+  let url;
+  if (ts.value == "") {
+    url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value;
+  } else {
+    url = "https://slack.com/api/chat.postMessage?token=" + tokenDom.value + "&channel=" + chDom.value + "&text=" + txtDom.value + "&thread_ts=" + ts.value;
+  }
   urlDom.value = encodeURI(url);
   let link = "<a href='" + url + "'>Or click the link to run it quickly.</a>"
   linkDom.innerHTML = link;
@@ -37,6 +44,10 @@ function start() {
   <br>
   ここに送信したいテキストを入力してください...<br>
   <textarea id="txt" rows="8" cols="80"></textarea>
+  <br>
+  ここにts(thread_ts)を入力してください...(ない場合は何も入れない)<br>
+  <input type="text" id="ts">
+  <br>
   <br>
   <br>
   <br>
